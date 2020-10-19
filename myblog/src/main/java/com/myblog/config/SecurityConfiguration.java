@@ -22,7 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	UserDetailsServiceImpl userDetailsService;
 	
 	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception { //인증 메니저
 		// TODO Auto-generated method stub
 		auth.userDetailsService(userDetailsService);
 	}
@@ -30,9 +30,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		
-		CharacterEncodingFilter filter = new CharacterEncodingFilter();        
-	    filter.setEncoding("UTF-8");        
-	    filter.setForceEncoding(true);        
+		CharacterEncodingFilter filter = new CharacterEncodingFilter();
+	    filter.setEncoding("UTF-8");      
+	    filter.setForceEncoding(true);
 	    
         http
         	.authorizeRequests()
@@ -51,13 +51,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
                 .and()
             .logout()
             	.logoutUrl("/logout")
-            	.invalidateHttpSession(true)
+            	.invalidateHttpSession(true) //브라우저가 종료되면 로그인했던 정보를 삭제함
             	.logoutSuccessUrl("/login/loginForm")
             	.and()
             .csrf()
             	.ignoringAntMatchers("/logout")
             	.and()
-            .addFilterBefore(filter, CsrfFilter.class);
+            .addFilterBefore(filter, CsrfFilter.class); //csrf filter이전에 filter를 추가하는 것.
     }
 	
 }

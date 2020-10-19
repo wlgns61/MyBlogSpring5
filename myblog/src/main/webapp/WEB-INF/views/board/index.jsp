@@ -169,7 +169,7 @@
 				<!-- search{s} -->
 				<div class="form-group row justify-content-center">
 					<div class="w100" style="padding-right:10px">
-						<select class="form-control form-control-sm" name="searchType" id="searchType" onChange={this.onChange.bind(this)}>
+						<select class="form-control form-control-sm" name="searchType" id="searchType" onChange="{this.onChange.bind(this)}">
 							<option value="title" ${searchType eq 'title' ? "selected":""}>제목</option>
 							<option value="content" ${searchType eq 'content' ? "selected":""}>본문</option>
 							<option value="reg_id" ${searchType eq 'reg_id' ? "selected":""}>작성자</option>

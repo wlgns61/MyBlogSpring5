@@ -34,7 +34,7 @@ public class SqlConfiguration {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
 		dataSource.setPassword("root");
-		dataSource.setUrl("jdbc:log4jdbc:mysql://127.0.0.1:3306/myblog?useSSL=false&amp&serverTimezone=Asia/Seoul");
+		dataSource.setUrl("jdbc:log4jdbc:mysql://127.0.0.1:3306/myblog?useSSL=false&allowPublicKeyRetrieval=true&amp&serverTimezone=Asia/Seoul");
 		dataSource.setDriverClassName(DriverSpy.class.getName());
 		return dataSource;
 	}

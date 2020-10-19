@@ -8,10 +8,13 @@
 		<put-attribute name="tile_body" value="/WEB-INF/views/login/{1}.jsp" /> 
 	</definition> 
 	
-	<!-- base --> 
+	<!-- base -->
+	<!-- header 정의부  --> 
 	<definition name="base-layout" template="/WEB-INF/tiles/layouts/base_layout.jsp"> 
 		<put-attribute name="tile_header" value="/WEB-INF/tiles/layouts/header.jsp" /> 
 	</definition>
+	
+	<!-- body 정의부 -->
 	 <definition name="board/*" extends="base-layout"> 
 		<put-attribute name="tile_body" value="/WEB-INF/views/board/{1}.jsp" />
 	 </definition> 

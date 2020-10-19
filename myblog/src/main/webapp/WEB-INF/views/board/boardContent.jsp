@@ -84,7 +84,7 @@
 				var paramData = JSON.stringify({"content" : replyContent
 												, "reg_id" : replyReg_Id
 												, "bid" : '${boardContent.bid}'
-				});
+				}); //json을 text로 
 				var headers = {"Content-Type" : "application/json"
 								, "X-HTTP-Method-Override": "POST"};
 				
@@ -93,7 +93,7 @@
 					, headers: headers
 					, data: paramData
 					, type: "POST"
-					, dataType: "text"
+					, dataType: "json"
 					, beforeSend : function(xhr) {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
 		                    xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
 		            }
@@ -147,7 +147,7 @@
 					, headers : headers
 					, data : paramData
 					, type : 'POST'
-					, dataType : 'text'
+					, dataType : 'json'
 					, beforeSend : function(xhr) {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
 	                    xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
 		            }
@@ -167,7 +167,7 @@
 						url: "${pageContext.request.contextPath}/restBoard/deleteReply"
 						, data : paramData
 						, type : 'POST'
-						, dataType : 'text'
+						, dataType : 'json'
 						, beforeSend : function(xhr) {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다*/
 			                    xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
 			            }

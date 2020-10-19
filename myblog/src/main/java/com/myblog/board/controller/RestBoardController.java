@@ -25,7 +25,7 @@ public class RestBoardController {
 	private BoardService boardService;
 	
 	@RequestMapping(value="/getReplyList", method= RequestMethod.POST)
-	public List<ReplyVO> getReplyList(@RequestParam("bid") int bid) throws Exception{
+	public List<ReplyVO> getReplyList(@RequestParam int bid) throws Exception{ //get방식에서 얻어온 값임
 		return boardService.getReplyList(bid);
 	}
 	

@@ -36,7 +36,6 @@ public class BoardController {
 			, @RequestParam(required = false, defaultValue="all") String category
 			, @ModelAttribute("search") Search search) throws Exception{
 		
-		model.addAttribute("search", search);
 		search.setKeyword(keyword);
 		search.setSearchType(searchType);
 		search.setCategory(category);
