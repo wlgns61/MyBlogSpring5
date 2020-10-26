@@ -47,6 +47,5 @@ CREATE TABLE `tbl_reply` (
   `reg_dt` timestamp NOT NULL COMMENT '작성일',
   `edit_dt` timestamp NOT NULL COMMENT '수정일',
   PRIMARY KEY (`rid`), KEY `bid` (`bid`),
-  CONSTRAINT FOREIGN KEY (`bid`) REFERENCES `tbl_board` (`bid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT FOREIGN KEY (`bid`) REFERENCES `tbl_board` (`bid`)
+  CONSTRAINT FOREIGN KEY (`bid`) REFERENCES `tbl_board` (`bid`) ON DELETE CASCADE ON UPDATE CASCADE
 );
