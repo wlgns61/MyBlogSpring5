@@ -4,3 +4,4 @@
 빌드: gradle  
 Java version: Java SE-1.9  
 server: Tomcat9.0  
+mysql: 8.0.21
