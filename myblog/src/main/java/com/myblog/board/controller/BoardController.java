@@ -61,13 +61,16 @@ public class BoardController {
 	@RequestMapping(value = "/saveBoard", method = RequestMethod.POST) // (view -> server)
 	public String saveBoard(@ModelAttribute("BoardVO") BoardVO boardVO, @RequestParam("mode") String mode
 			, RedirectAttributes rttr) throws Exception { // @ModelAttribute("BoardVO")는 뷰에서 이름이 "BoardVO"인 녀석
-		
-		if(mode.equals("edit")) {
-			boardService.updateBoard(boardVO);
+		try {
+			if(mode.equals("edit")) {
+				boardService.updateBoard(boardVO);
+			}
+			else {
+				boardService.insertBoard(boardVO);
+			}
+		}catch(Exception e) {
+			return "redirect:/board/getBoardList";
 		}
-		else {
-			boardService.insertBoard(boardVO);
-		}		
 		return "redirect:/board/getBoardList";
 	}
 	
